@@ -12,17 +12,17 @@ db.contactlist.insertMany([{lastname: 'Ben Lahmer', firstname: 'Fares', email: '
 db.contactlist.find()
 
 //Display all the information about only one person using his id//
-db.contactlist.find({_id: {$eq: ObjectId("5e3d0e7fba912cee6306c9e4")}}).pretty()
+db.contactlist.find({_id: {$eq: ObjectId("5e3d2336cd2c61fa1ad9c8cd")}}).pretty()
 
 //Display all the contact list having age>18//
 db.contactlist.find({age: {$gt: 18}})
 
 
 //Display all the contact list having age>18 and name containing "ah"//
-db.contaclist.find({$and: [{age: {$gt: 18},{name : {$elematch: 'ah'}})
+db.contactlist.find({$and: [{age: {$gt: 18}}, {lastname : { $regex: 'ah', $options: 'i'}}]})
 
 //Change the contact first name of "kefi Seif" by "Kefi Anis"//
-db.contaclist.update({$and: [{lastname: 'Kefi'}, {firstname: 'Seif'}]}, {$set: {firstname: ‘Anis’}})
+db.contactlist.update({$and: [{lastname: 'Kefi'}, {firstname: 'Seif'}]}, {$set: {firstname: 'Anis'}})
 
 //Delete the the contact list having age < 5//
 db.contactlist.deleteMany({age: {$lt: 5}})
