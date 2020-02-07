@@ -16,7 +16,7 @@ db.contaclist.find({id: {$eq: 5e3d0e7fba912cee6306c9e4}})
 
 
 //Display all the contact list having age>18//
-db.contaclist.find({age: {$gt: 18}})
+db.contactlist.find({age: {$gt: 18}})
 
 
 //Display all the contact list having age>18 and name containing "ah"//
