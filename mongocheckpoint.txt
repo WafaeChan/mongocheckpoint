@@ -6,7 +6,7 @@ use contact
 db.createCollection('contactlist')
 
 //Insert 3 persons in "contactlist"//
-db.contactlist.insertMany({lastname: 'Ben Lahmer', firstname: 'Fares', email: 'fares@gmail.com', age: 26}, {lastname: 'Kefi', firstname: 'Seif', email: 'kefi@gmail.com', age: 15}, {lastname: 'Fatnassi', firstname: 'Sarra', email: 'sarra@gmail.com', age: 40}, {lastname: 'Ben Yahia', firstname: 'Rym',  age: 4}, {lastname: 'Cherif', firstname: 'Sami', age: 3})
+db.contactlist.insertMany([{lastname: 'Ben Lahmer', firstname: 'Fares', email: 'fares@gmail.com', age: 26}, {lastname: 'Kefi', firstname: 'Seif', email: 'kefi@gmail.com', age: 15}, {lastname: 'Fatnassi', firstname: 'Sarra', email: 'sarra@gmail.com', age: 40}, {lastname: 'Ben Yahia', firstname: 'Rym',  age: 4}, {lastname: 'Cherif', firstname: 'Sami', age: 3}])
 
 //Display all the contact list//
 db.contactlist.find()
@@ -23,7 +23,7 @@ db.contaclist.find({age: {$gt: 18}})
 db.contaclist.find({$and: [{age: {$gt: 18},{name : {$elematch: 'ah'}})
 
 //Change the contact first name of "kefi Seif" by "Kefi Anis"//
-db.contaclist.update({$and: [{lastname: 'Kefi'}, {firstname: 'Seif'}]}, {$set: {firstname: ‘Anis’}})
+db.contaclist.update({$and: [{lastname: 'Kefi'}, {firstname: 'Seif'}]}, {$set: {firstname: â€˜Anisâ€™}})
 
 //Delete the the contact list having age < 5//
 db.contactlist.deleteMany({age: {$lt: 5}})
