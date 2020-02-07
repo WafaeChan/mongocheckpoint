@@ -12,8 +12,7 @@ db.contactlist.insertMany([{lastname: 'Ben Lahmer', firstname: 'Fares', email: '
 db.contactlist.find()
 
 //Display all the information about only one person using his id//
-db.contaclist.find({id: {$eq: 5e3d0e7fba912cee6306c9e4}})
-
+db.contactlist.find({_id: {$eq: ObjectId("5e3d0e7fba912cee6306c9e4")}}).pretty()
 
 //Display all the contact list having age>18//
 db.contactlist.find({age: {$gt: 18}})
